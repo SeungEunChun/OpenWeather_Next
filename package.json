@@ -1,0 +1,26 @@
+{
+  "name": "nextweather",
+  "version": "1.0.0",
+  "description": "Next.js 를 활용한 실시간 날씨 정보 검색 웹앱",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "SeungEunChun",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "next": "^14.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "swiper": "^11.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.18",
+    "@types/react": "18.2.55",
+    "typescript": "5.3.3"
+  }
+}
