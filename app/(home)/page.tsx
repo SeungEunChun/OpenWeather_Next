@@ -3,8 +3,12 @@ export const metadata = {
 };
 
 
-export default async function MainPage() {
+export default function MainPage() {
+
+
     return (
-        <h1>Hello Weather!</h1>
+        <div>
+
+        </div>
     )
 }

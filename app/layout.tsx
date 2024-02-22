@@ -1,6 +1,7 @@
 import { Metadata } from "next"
-import Header from "../components/header"
+import Search from "../components/search"
 import Footer from "../components/footer"
+import Header from "../components/header"
 import '../styles/global.css'
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
+        <Search />
         {children}
         <Footer />
       </body>
