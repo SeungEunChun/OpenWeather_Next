@@ -4,14 +4,12 @@ import { useState } from 'react';
 
 export default function Search() {
     const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
-    // const transKey = process.env.NEXT_PUBLIC_TRANSLATE_API_KEY
+
     const [city, setCity] = useState('');
     const [weather, setWeather] = useState(null);
 
 
-    // const fetchTranslate = async (e) => {
-    //     const res = await fetch()
-    // }
+
 
 
     const fetchWeather = async (e) => {
