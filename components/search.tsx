@@ -6,17 +6,20 @@ export default function Home() {
     const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
     const [city, setCity] = useState('');
     const [weather, setWeather] = useState(null);
+    const Celsius = 273;
+
 
     const fetchWeather = async (e) => {
         e.preventDefault();
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
+
         const data = await response.json();
         setWeather(data);
     };
 
     return (
         <div>
-            <form onSubmit={fetchWeather}>
+            <form onSubmit={fetchWeather} className='myform'>
                 <input
                     type="text"
                     value={city}
@@ -27,10 +30,15 @@ export default function Home() {
             </form>
 
             {weather && (
-                <div>
+                <div className='container'>
                     <h1> {weather.name} 날씨 정보</h1>
-                    <p>기온: {(weather.main.temp - 273).toFixed(1)}°C</p>
-                    <p>상태: {weather.weather[0].description}</p>
+                    <p>기온 : {(weather.main.temp - Celsius).toFixed(1)}°C</p>
+                    <p>체감온도 : {(weather.main.feels_like - Celsius).toFixed(1)}°C</p>
+                    <p>상태 : {weather.weather[0].description}</p>
+                    <p>풍속 : {(weather.wind.speed).toFixed(1)}m/s</p>
+                    {/* 아이콘실험 */}
+                    <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="weathericon" />
+
                 </div>
             )}
         </div>
