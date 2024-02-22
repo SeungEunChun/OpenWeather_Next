@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 export default function Search() {
-    const apiKey = process.env.NEXT_OPENWEATHER_API_KEY
+    const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
     // const transKey = process.env.NEXT_PUBLIC_TRANSLATE_API_KEY
     const [city, setCity] = useState('');
     const [weather, setWeather] = useState(null);
