@@ -33,16 +33,89 @@ a {
 }
 
 .searchresult {
-    background-color: #ccc;
+
     border-radius: 30px;
     height: 400px;
     padding-top: 40px;
     width: 300px;
+
 }
+
 
 .mybtn {
     background-color: black !important;
     color: white !important;
 }
 
-.myform input {}
+/* 날씨의 상태에 따라 .searchresult의 배경색을 변경함 */
+.searchresult.bg01d,
+.searchresult.bg01n {
+    background-color: rgb(143,
+            208,
+            255);
+}
+
+.searchresult.bg02d,
+.searchresult.bg02n {
+    background-color: rgb(2,
+            112,
+            191);
+}
+
+.searchresult.bg03d,
+.searchresult.bg03n {
+    background-color: #ccc;
+}
+
+.searchresult.bg04d,
+.searchresult.bg04n {
+    background-color: #e6e6e6;
+}
+
+.searchresult.bg09d,
+.searchresult.bg09n {
+    background-color: gray;
+}
+
+.searchresult.bg10d,
+.searchresult.bg10n {
+    background-color: #bfccd6;
+}
+
+.searchresult.bg11d,
+.searchresult.bg11n {
+    background-color: #c9c934;
+}
+
+.searchresult.bg13d,
+.searchresult.bg13n {
+    background-color: #f0f0ed;
+}
+
+.searchresult.bg50d,
+.searchresult.bg50n {
+    background-color: #c5d9d4;
+}
+
+
+
+/* ----------------------------------------------- */
+ul.recenttag {
+    align-items: center;
+    list-style: none;
+
+
+}
+
+ul.recenttag>li {
+    display: block;
+    border-radius: 20px;
+    height: 40px;
+    background-color: black;
+    width: 100px;
+    margin-right: 10px;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    margin-bottom: 10px
+}

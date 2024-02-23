@@ -1,12 +1,41 @@
 "use client"
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Search() {
+    const cityArr = {
+        ko: [
+            "서울",
+            "도쿄",
+            "런던",
+            "파리",
+            "베이징",
+            "아테네",
+            "헬싱키",
+            "모스크바",
+            "뉴욕",
+            "로마"
+
+        ],
+        en: [
+            "Seoul",
+            "Tokyo",
+            "London",
+            "Paris",
+            "Beijing",
+            "Athens",
+            "Helsinki",
+            "Moscow",
+            "New York",
+            "Rome"
+        ]
+    }
     const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
 
     const [city, setCity] = useState('');
     const [weather, setWeather] = useState(null);
+
+
 
 
 
@@ -20,9 +49,13 @@ export default function Search() {
 
         const data = await response.json();
         setWeather(data);
-
-
     };
+
+
+
+
+
+
 
     return (
         <div>
@@ -38,10 +71,19 @@ export default function Search() {
                     <button className='btn py-0 mb-1 ms-3 mybtn' type="submit">검색</button>
                 </form >
             </div>
+            <ul className='recenttag d-lg-flex mt-5'>
+                {
+                    cityArr["ko"].map((e, i) => {
+                        return (
+                            <li key={`location${i}`} onClick={() => { setCity(cityArr["en"][i]) }}>{e}</li>
+                        )
+                    })
+                }
+            </ul>
 
 
             {weather && (
-                <div className={`text-center mt-5 mb-5 searchresult mx-auto ${weather.weather[0].icon}`}>
+                <div className={`text-center mt-5 mb-5 searchresult mx-auto bg${weather.weather[0].icon}`}>
                     <h2> {weather.name} 날씨 정보</h2>
                     <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="weathericon" />
 
