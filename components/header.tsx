@@ -1,3 +1,7 @@
+import Navigation from "./navigation"
 export default function Header() {
-    return <h1>I'm Header</h1>
+    return <header className="d-flex justify-content-between">
+        <h1 id="Logo"><a href="/"></a></h1>
+        <Navigation />
+    </header>
 }

@@ -1,8 +1,9 @@
 import { Metadata } from "next"
-import Search from "../components/search"
-import Footer from "../components/footer"
+
+
 import Header from "../components/header"
 import '../styles/global.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export const metadata: Metadata = {
   title: {
@@ -20,10 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        <Search />
-        {children}
-        <Footer />
+        <section className="container">
+          <Header />
+          <section style={{ height: "600px" }}>
+            {children}
+          </section>
+        </section>
+
       </body>
     </html>
   )
