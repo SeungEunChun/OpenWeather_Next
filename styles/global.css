@@ -37,7 +37,8 @@ a {
     border-radius: 30px;
     height: 400px;
     padding-top: 40px;
-    width: 300px;
+    max-width: 350px;
+    width: 350px;
 
 }
 
@@ -103,6 +104,7 @@ a {
 ul.recenttag {
     align-items: center;
     list-style: none;
+    padding: 0 0;
 
 
 }
