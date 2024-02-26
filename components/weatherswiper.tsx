@@ -38,7 +38,8 @@ const WeatherSwiper = () => {
 
     return (
         <Swiper
-            slidesPerView={4}
+            slidesPerView={3}
+            spaceBetween={10}
             autoplay={{
                 delay: 1000,
                 disableOnInteraction: false,
@@ -50,7 +51,7 @@ const WeatherSwiper = () => {
             {
                 weather.map((e, i) => {
                     return <SwiperSlide>
-                        <div key={`city${i}`}>
+                        <div key={`city${i}`} className={`text-center mt-5 mb-5 searchresult mx-auto bg${e.weather[0].icon}`}>
                             <h2>{e.name}</h2>
                             <img src={`https://openweathermap.org/img/wn/${e.weather[0].icon}@2x.png`} alt='weathericon' />
                             <p>기온 : {(e.main.temp).toFixed(1)}°C</p>
