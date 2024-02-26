@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
+
 export default function Search() {
     const cityArr = {
         ko: [
@@ -45,7 +46,7 @@ export default function Search() {
 
 
 
-    const fetchWeather = async (e) => {
+    const FetchWeather = async (e) => {
         e.preventDefault();
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=kr&units=metric`);
 
@@ -66,7 +67,7 @@ export default function Search() {
     return (
         <div>
             <div className='d-flex flex-row-reverse '>
-                <form onSubmit={fetchWeather} className='myform mt-3' >
+                <form onSubmit={FetchWeather} className='myform mt-3' >
                     <input
                         type="text"
                         value={city}
@@ -77,11 +78,11 @@ export default function Search() {
                     <button className='btn py-0 mb-1 ms-3 mybtn' type="submit">검색</button>
                 </form >
             </div>
-            <div className='d-lg-flex'>
+            <div className='d-md-flex'>
                 <div>
                     <button onClick={handleClick}>도시 예시</button>
                     {recent &&
-                        <ul className='recenttag d-md-flex mt-5'>
+                        <ul className='recenttag mt-5'>
                             {
                                 cityArr["ko"].map((e, i) => {
                                     return (
@@ -109,6 +110,7 @@ export default function Search() {
                 )
                 }
             </div>
+
         </div >
     );
 }
