@@ -80,9 +80,9 @@ export default function Search() {
             </div>
             <div className='d-md-flex'>
                 <div>
-                    <button onClick={handleClick}>도시 예시</button>
+                    <strong onClick={handleClick} className='examplebtn'>도시 예시</strong>
                     {recent &&
-                        <ul className='recenttag mt-5'>
+                        <ul className='recenttag mt-5 position-fixed'>
                             {
                                 cityArr["ko"].map((e, i) => {
                                     return (

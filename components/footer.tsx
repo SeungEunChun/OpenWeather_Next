@@ -1,3 +1,5 @@
 export default function Footer() {
-    return <h1>I'm Footer</h1>
+    return <div className="border-top">
+        나는하단
+    </div>
 }

@@ -2,6 +2,7 @@ import { Metadata } from "next"
 
 
 import Header from "../components/header"
+import Footer from "../components/footer"
 import '../styles/global.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -28,7 +29,7 @@ export default function RootLayout({
             {children}
           </section>
         </section>
-
+        <Footer />
       </body>
     </html>
   )

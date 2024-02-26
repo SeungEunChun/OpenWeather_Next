@@ -7,16 +7,18 @@ import 'swiper/css'
 
 const WeatherSwiper = () => {
     const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
-    const cities = ["Seoul",
-        "Tokyo",
-        "London",
-        "Paris",
-        "Beijing",
-        "Athens",
-        "Helsinki",
-        "Moscow",
-        "New York",
-        "Rome"];
+    const cities = [
+        "Nairobi", "New Delhi", "Nicosia", "Dhaka", "Dublin", "Dubai", "Lagos", "Lahore",
+        "Reykjavik", "Los Angeles", "Luxembourg", "Ljubljana", "Riga", "Lima", "Lisbon",
+        "Manila", "Madrid", "Marrakesh", "Montreal", "Mumbai",
+        "Baghdad", "Warsaw", "Barcelona", "Bangkok", "Venice", "Berlin", "Belgrade", "Bogota",
+        "Budapest", "Buenos Aires", "Bucharest", "Bratislava", "Brussels", "Vienna", "Vilnius",
+        "Santiago", "São Paulo", "Shanghai", "San Francisco", "Saint Petersburg", "Sofia", "Stockholm",
+        "Sydney", "Chicago", "Singapore", "Amsterdam", "Jerusalem", "Oslo", "Ottawa", "Johannesburg", "Wellington", "Istanbul", "Zagreb", "Jakarta", "Geneva", "Karachi",
+        "Caracas", "Kabul", "Cairo", "Cape Town", "Copenhagen", "Kuala Lumpur", "Kyiv", "Tallinn",
+        "Tehran", "Toronto", "Prague", "Frankfurt", "Hanoi", "The Hague", "Hong Kong"
+    ];
+
 
     const [weather, setWeather] = useState([]);
 
@@ -24,7 +26,9 @@ const WeatherSwiper = () => {
 
     useEffect(() => {
         const FetchWeather = async () => {
-            const data = await Promise.all(cities.map(city => fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=kr&units=metric`).then(res => res.json())))
+            const cityshuffle = cities.sort(() => 0.5 - Math.random())
+            const cityselect = cityshuffle.slice(0, 10)
+            const data = await Promise.all(cityselect.map(city => fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=kr&units=metric`).then(res => res.json())))
             setWeather(data);
         };
 
@@ -41,12 +45,29 @@ const WeatherSwiper = () => {
             slidesPerView={3}
             spaceBetween={10}
             autoplay={{
-                delay: 1000,
+                delay: 2000,
                 disableOnInteraction: false,
 
             }}
             modules={[Autoplay]}
             loop={true}
+            breakpoints={{
+                992: {
+                    slidesPerView: 3
+                },
+                768: {
+                    slidesPerView: 2.5
+                },
+                576: {
+                    slidesPerView: 2
+                },
+                405: {
+                    slidesPerView: 1.2
+                },
+                0: {
+                    slidesPerView: 1
+                }
+            }}
         >
             {
                 weather.map((e, i) => {

@@ -105,6 +105,7 @@ ul.recenttag {
     align-items: center;
     list-style: none;
     padding: 0 0;
+    z-index: 9999;
 
 
 }
@@ -121,4 +122,10 @@ ul.recenttag>li {
     text-align: center;
     line-height: 35px;
     margin-bottom: 10px
+}
+
+.examplebtn {
+    position: fixed;
+    top: 200px;
+    z-index: 9999;
 }

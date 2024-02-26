@@ -5,5 +5,7 @@ export const metadata = {
 
 
 export default function PageContact() {
-    return <h1>Contact</h1>
+    return <div>
+        <h2>Hello, My Name Is SeungEunChun, I'm Frontend Developer</h2>
+    </div>
 }
