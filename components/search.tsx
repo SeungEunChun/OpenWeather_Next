@@ -95,7 +95,7 @@ export default function Search() {
 
                 </div>
                 {weather && (
-                    <div className={`text-center mt-5 mb-5 searchresult mx-auto bg${weather.weather[0].icon}`}>
+                    <div className={`w-100 text-center mt-5 mb-5 searchresult mx-auto bg${weather.weather[0].icon}`}>
                         <h2> {weather.name} 날씨 정보</h2>
                         <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="weathericon" />
 
