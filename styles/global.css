@@ -151,3 +151,14 @@ ul.recenttag>li {
 .weatherswiper {
     overflow: visible !important;
 }
+
+#result {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 400px;
+    z-index: 9999;
+    margin: auto;
+}
