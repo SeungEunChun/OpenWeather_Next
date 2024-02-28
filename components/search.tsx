@@ -1,41 +1,42 @@
 "use client"
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 export default function Search() {
-    const cityArr = {
-        ko: [
-            "서울",
-            "도쿄",
-            "런던",
-            "파리",
-            "베이징",
-            "아테네",
-            "헬싱키",
-            "모스크바",
-            "뉴욕",
-            "로마"
+    // const cityArr = {
+    //     ko: [
+    //         "서울",
+    //         "도쿄",
+    //         "런던",
+    //         "파리",
+    //         "베이징",
+    //         "아테네",
+    //         "헬싱키",
+    //         "모스크바",
+    //         "뉴욕",
+    //         "로마"
 
-        ],
-        en: [
-            "Seoul",
-            "Tokyo",
-            "London",
-            "Paris",
-            "Beijing",
-            "Athens",
-            "Helsinki",
-            "Moscow",
-            "New York",
-            "Rome"
-        ]
-    }
+    //     ],
+    //     en: [
+    //         "Seoul",
+    //         "Tokyo",
+    //         "London",
+    //         "Paris",
+    //         "Beijing",
+    //         "Athens",
+    //         "Helsinki",
+    //         "Moscow",
+    //         "New York",
+    //         "Rome"
+    //     ]
+    // }
     const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
 
     const [city, setCity] = useState('');
     const [weather, setWeather] = useState(null);
-    const [recent, setRecent] = useState(false);
+    // const [recent, setRecent] = useState(false);
+
 
 
 
@@ -54,9 +55,9 @@ export default function Search() {
         setWeather(data);
     };
 
-    const handleClick = () => {
-        setRecent((prevRecent) => !prevRecent)
-    }
+    // const handleClick = () => {
+    //     setRecent((prevRecent) => !prevRecent)
+    // }
 
 
 
@@ -66,8 +67,8 @@ export default function Search() {
 
     return (
         <div>
-            <div className='d-flex flex-row-reverse '>
-                <form onSubmit={FetchWeather} className='myform mt-3' >
+            <div className='d-flex'>
+                <form onSubmit={FetchWeather} className='' >
                     <input
                         type="text"
                         value={city}
@@ -75,11 +76,11 @@ export default function Search() {
                         placeholder="도시 이름을 영어로 입력해 주세요"
                         required
                     />
-                    <button className='btn py-0 mb-1 ms-3 mybtn' type="submit">검색</button>
+                    <button className='' type="submit">검색</button>
                 </form >
             </div>
             <div className='d-md-flex'>
-                <div>
+                {/* <div>
                     <strong onClick={handleClick} className='examplebtn'>도시 예시</strong>
                     {recent &&
                         <ul className='recenttag mt-5 position-fixed'>
@@ -93,7 +94,7 @@ export default function Search() {
                         </ul>
                     }
 
-                </div>
+                </div> */}
                 {weather && (
                     <div className={`w-100 text-center mt-5 mb-5 searchresult mx-auto bg${weather.weather[0].icon}`}>
                         <h2> {weather.name} 날씨 정보</h2>

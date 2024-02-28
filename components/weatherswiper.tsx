@@ -3,6 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import { useState, useEffect } from 'react'
 import 'swiper/css'
+import 'swiper/css/effect-coverflow'
+import { EffectCoverflow } from 'swiper/modules'
 
 
 const WeatherSwiper = () => {
@@ -27,7 +29,7 @@ const WeatherSwiper = () => {
     useEffect(() => {
         const FetchWeather = async () => {
             const cityshuffle = cities.sort(() => 0.5 - Math.random())
-            const cityselect = cityshuffle.slice(0, 10)
+            const cityselect = cityshuffle.slice(0, 8)
             const data = await Promise.all(cityselect.map(city => fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=kr&units=metric`).then(res => res.json())))
             setWeather(data);
         };
@@ -42,8 +44,18 @@ const WeatherSwiper = () => {
 
     return (
         <Swiper className='weatherswiper'
-            slidesPerView={3}
-            spaceBetween={10}
+            effect={'coverflow'}
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView={'auto'}
+
+            coverflowEffect={{
+                rotate: 20,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false,
+            }}
             autoplay={{
                 delay: 2000,
                 disableOnInteraction: false,
@@ -51,7 +63,7 @@ const WeatherSwiper = () => {
             }}
 
 
-            modules={[Autoplay]}
+            modules={[Autoplay, EffectCoverflow]}
             loop={true}
             loopAdditionalSlides={1}
             breakpoints={{
@@ -75,10 +87,10 @@ const WeatherSwiper = () => {
             {
                 weather.map((e, i) => {
                     return <SwiperSlide>
-                        <div key={`city${i}`} className={`w-100 text-center mt-5 mb-5 searchresult mx-3 bg${e.weather[0].icon}`}>
-                            <h2>{e.name}</h2>
+                        <div key={`city${i}`} className={`w-100 text-center searchresult bg${e.weather[0].icon} py-5`}>
+                            <h2>{e.name} 날씨</h2>
                             <img src={`https://openweathermap.org/img/wn/${e.weather[0].icon}@2x.png`} alt='weathericon' />
-                            <p>기온 : {(e.main.temp).toFixed(1)}°C</p>
+                            <strong>{(e.main.temp).toFixed(1)}°C</strong>
                             <p>체감온도 : {(e.main.temp).toFixed(1)}°C</p>
                             <p>상태 : {e.weather[0].description}</p>
                             <p>풍속 : {(e.wind.speed).toFixed(1)}m/s</p>

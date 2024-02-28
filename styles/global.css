@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'TTHakgyoansimUndongjangL';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimUndongjangL.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    overflow-x: hidden;
+}
+
 #Logo a {
     display: block;
 
@@ -5,7 +16,7 @@
 
 #Logo img {
     width: 100px;
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 /* reset */
@@ -13,6 +24,10 @@ ul#Gnb {
     list-style: none;
     font-size: 20px;
     padding-top: 30px;
+}
+
+ul#Gnb li {
+    font-family: 'TTHakgyoansimUndongjangL';
 }
 
 ul#Gnb li a:hover {
@@ -28,13 +43,27 @@ a {
 .searchresult {
 
     border-radius: 30px;
-    height: 400px;
-    padding-top: 40px;
+    /* height: 400px; */
+    /* padding-top: 40px; */
     max-width: 300px;
     width: 300px;
 
 }
 
+.searchresult strong {
+    font-size: 1.5em;
+
+}
+
+.searchresult p {
+    font-size: 1.1em;
+    font-family: 'TTHakgyoansimUndongjangL';
+}
+
+.searchresult h2 {
+    font-family: 'TTHakgyoansimUndongjangL';
+    font-size: 1.5em;
+}
 
 .mybtn {
     background-color: black !important;
