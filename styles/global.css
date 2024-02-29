@@ -152,6 +152,10 @@ ul.recenttag>li {
     overflow: visible !important;
 }
 
+.swiper-slide .searchresult {
+    max-height: 400px !important;
+}
+
 #result {
     position: absolute;
     top: 30%;
