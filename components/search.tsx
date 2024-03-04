@@ -99,8 +99,7 @@ const cityMap: { [key: string]: string } = { //각국의 수도 이름 배열
     "루안다": "Luanda",
     "킨샤사": "Kinshasa",
     "브라자빌": "Brazzaville",
-    "리브르빌": "Libreville",
-    "뉴욕": "NewYork"
+    "리브르빌": "Libreville"
 
 };
 
@@ -147,7 +146,7 @@ export default function Search(): JSX.Element {
 
     return (
         <div>
-            <div className='d-flex'>
+            <div className='d-flex container justify-content-end'>
                 <form onSubmit={FetchWeather} className='' >
                     <input
                         type="text"

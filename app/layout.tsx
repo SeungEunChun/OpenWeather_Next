@@ -2,7 +2,7 @@ import { Metadata } from "next"
 
 
 import Header from "../components/header"
-import Footer from "../components/footer"
+
 import '../styles/global.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -23,13 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <section className="container">
+        <section>
           <Header />
           <section style={{ height: "600px" }}>
             {children}
           </section>
         </section>
-        <Footer />
+
       </body>
     </html>
   )

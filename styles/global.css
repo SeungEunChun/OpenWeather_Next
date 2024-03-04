@@ -149,7 +149,7 @@ ul.recenttag>li {
 }
 
 .weatherswiper {
-    overflow: visible !important;
+
     margin-top: 50px;
 }
 
@@ -160,10 +160,10 @@ ul.recenttag>li {
 
 #result {
     position: absolute;
-    top: 30%;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    top: 30% !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
     max-height: 400px;
     z-index: 5000;
     margin: auto;
@@ -175,13 +175,53 @@ body.dim::after {
     content: "";
     position: fixed;
     background-color: rgba(0, 0, 0, 0.8);
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
     z-index: 4999;
 }
 
 .closebtn {
     cursor: pointer;
+}
+
+#Contact {
+    list-style: none;
+}
+
+.portFolio ul {
+    list-style: none;
+}
+
+.portFolio img {
+    width: 200px;
+}
+
+#pinterest {
+    column-width: 350px;
+    column-gap: 15px;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    height: 0;
+    overflow: hidden;
+}
+
+#pinterest.show {
+    opacity: 1;
+    height: auto;
+}
+
+#pinterest figure {
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    ;
+}
+
+#pinterest figure img {
+    width: 100%;
 }

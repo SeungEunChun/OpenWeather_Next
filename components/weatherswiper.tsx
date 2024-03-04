@@ -65,10 +65,16 @@ const WeatherSwiper = () => {
 
             modules={[Autoplay, EffectCoverflow]}
             loop={true}
-            loopAdditionalSlides={1}
+            loopAdditionalSlides={0}
             breakpoints={{
-                992: {
+                1650: {
+                    slidesPerView: 6
+                },
+                1600: {
                     slidesPerView: 4
+                },
+                992: {
+                    slidesPerView: 3
                 },
                 768: {
                     slidesPerView: 2.5
@@ -77,7 +83,7 @@ const WeatherSwiper = () => {
                     slidesPerView: 2
                 },
                 405: {
-                    slidesPerView: 1.2
+                    slidesPerView: 1
                 },
                 0: {
                     slidesPerView: 1
