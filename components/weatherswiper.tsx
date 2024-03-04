@@ -1,14 +1,31 @@
 "use client"
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, FC } from 'react'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import { EffectCoverflow } from 'swiper/modules'
 
+interface WeatherData {//이곳도 비동기를 직접적으로 요청하므로 데이터에 대한 TS 작성
+    name: string;
+    weather: [
+        {
+            icon: string;
+            description: string;
+        }
+    ];
+    main: {
+        temp: number;
+        feels_like: number;
+    };
+    wind: {
+        speed: number;
+    };
+}
 
-const WeatherSwiper = () => {
-    const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
+
+const WeatherSwiper: FC = () => {
+    const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY as string
     const cities = [
         "Nairobi", "New Delhi", "Nicosia", "Dhaka", "Dublin", "Dubai", "Lagos", "Lahore",
         "Reykjavik", "Los Angeles", "Luxembourg", "Ljubljana", "Riga", "Lima", "Lisbon",
@@ -22,7 +39,7 @@ const WeatherSwiper = () => {
     ];
 
 
-    const [weather, setWeather] = useState([]);
+    const [weather, setWeather] = useState<WeatherData[]>([]);
 
 
 
@@ -30,7 +47,7 @@ const WeatherSwiper = () => {
         const FetchWeather = async () => {
             const cityshuffle = cities.sort(() => 0.5 - Math.random())
             const cityselect = cityshuffle.slice(0, 8)
-            const data = await Promise.all(cityselect.map(city => fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=kr&units=metric`).then(res => res.json())))
+            const data: WeatherData[] = await Promise.all(cityselect.map(city => fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=kr&units=metric`).then(res => res.json())))
             setWeather(data);
         };
 
