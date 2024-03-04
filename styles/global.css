@@ -150,10 +150,12 @@ ul.recenttag>li {
 
 .weatherswiper {
     overflow: visible !important;
+    margin-top: 50px;
 }
 
 .swiper-slide .searchresult {
     max-height: 400px !important;
+    word-break: keep-all;
 }
 
 #result {
@@ -163,6 +165,23 @@ ul.recenttag>li {
     bottom: 0;
     right: 0;
     max-height: 400px;
-    z-index: 9999;
+    z-index: 5000;
     margin: auto;
+    padding-top: 30px;
+
+}
+
+body.dim::after {
+    content: "";
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 4999;
+}
+
+.closebtn {
+    cursor: pointer;
 }
