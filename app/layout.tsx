@@ -25,7 +25,7 @@ export default function RootLayout({
       <body>
         <section>
           <Header />
-          <section style={{ height: "600px" }}>
+          <section>
             {children}
           </section>
         </section>

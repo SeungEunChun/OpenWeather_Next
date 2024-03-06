@@ -26,7 +26,7 @@ export default function Search(): JSX.Element {
     const [translate, setTranslate] = useState<string>(''); //사용자가 입력한 도시명을 받아들이고 영어 배열 찾아가는 state
     const [weather, setWeather] = useState<WeatherData | null>(null);
     const [currentMap, setCurrentMap] = useState<{ [key: string]: string }>(worldcityMap);//select의 옵션값이 바뀜에 따라 대기하는 배열이 다르게 하기 위함.
-
+    const [mapValue, setMapValue] = useState<string>("world"); //handleSelect안의 selectMap 상태에 따라 placeholder 텍스트를 바꾸기 위함.
     const handleClick = () => {
         setWeather(null);
         document.body.classList.remove("dim")
@@ -35,6 +35,7 @@ export default function Search(): JSX.Element {
     const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
         e.preventDefault();
         const selectMap = e.target.value;
+        setMapValue(selectMap); // select박스 value에 따라 위의 mapValue 값을 업데이트
         setCurrentMap(selectMap === "world" ? worldcityMap : koreacityMap);
         setTranslate('');
 
@@ -78,17 +79,17 @@ export default function Search(): JSX.Element {
         <div>
 
             <div className='d-flex container justify-content-end'>
-                <form onSubmit={FetchWeather} className='' >
+                <form onSubmit={FetchWeather} className='searchForm' >
                     <input
                         type="text"
                         value={translate}
                         onChange={userTranslate}
-                        placeholder="도시 이름!"
+                        placeholder={mapValue === "world" ? "해외 수도 입력" : "국내 도시 입력"}
                         required
                     />
                     <button className='' type="submit">검색</button>
                 </form>
-                <select name="location" id="location" onChange={handleSelect} className='ms-3'>
+                <select name="location" id="location" onChange={handleSelect} className='ms-3 searchselect'>
                     <option value="world">전세계 날씨</option>
                     <option value="korea">한국 날씨</option>
                 </select>
