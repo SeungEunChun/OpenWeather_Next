@@ -35,9 +35,9 @@ ul#Gnb li a:hover {
     transition: .5s;
 }
 
-a {
+ul#Gnb li a {
     text-decoration: none !important;
-    color: black !important;
+    color: black;
 }
 
 .searchresult {
@@ -229,4 +229,24 @@ body.dim::after {
 
 .searchselect {
     height: 30.5px;
+}
+
+.activeLink {
+    color: red !important;
+}
+
+.helper {
+    background-color: white;
+    position: absolute;
+    top: 30% !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    max-height: 400px;
+    z-index: 5000;
+    margin: auto;
+    padding-top: 30px;
+    max-width: 600px;
+    width: 300px;
+    width: 100%;
 }

@@ -193,7 +193,7 @@ const WeatherSwiper: FC = () => {
             effect={'coverflow'}
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView={'auto'}
+            slidesPerView={6}
 
             coverflowEffect={{
                 rotate: 20,

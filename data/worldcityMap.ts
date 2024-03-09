@@ -1,5 +1,5 @@
 export const worldcityMap: { [key: string]: string } = { //각국의 수도 이름 배열
-    "서울": "Seoul",
+
     "평양": "Pyongyang",
     "도쿄": "Tokyo",
     "베이징": "Beijing",
