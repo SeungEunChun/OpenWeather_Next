@@ -78,7 +78,7 @@ export default function Search(): JSX.Element {
     return (
         <div>
 
-            <div className='d-flex container justify-content-end'>
+            <div className='d-md-flex container justify-content-end'>
                 <form onSubmit={FetchWeather} className='searchForm' >
                     <input
                         type="text"
@@ -89,7 +89,7 @@ export default function Search(): JSX.Element {
                     />
                     <button className='' type="submit">검색</button>
                 </form>
-                <select name="location" id="location" onChange={handleSelect} className='ms-3 searchselect'>
+                <select name="location" id="location" onChange={handleSelect} className='ms-md-3 searchselect mt-3 mt-md-0'>
                     <option value="world">전세계 날씨</option>
                     <option value="korea">한국 날씨</option>
                 </select>
