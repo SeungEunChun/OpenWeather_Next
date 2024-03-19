@@ -267,14 +267,57 @@ ul.contactlist a {
 
 @keyframes slideIn {
     from {
-        transform: translateX(-300px);
+        transform: translateY(-300px);
         opacity: 0;
     }
 
     to {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
     }
+}
+
+@-moz-keyframes slideIn {
+
+    /* for Firefox */
+    from {
+        transform: translateY(-300px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes slideIn {
+
+    /* for Opera */
+    from {
+        transform: translateY(-300px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+img.myprofile {
+    animation: fadeIn 3s forwards;
+    animation-delay: var(--animation-delay, 0s);
 }
 
 .contactlist li.icon:nth-child(1) {
@@ -287,4 +330,36 @@ ul.contactlist a {
 
 .contactlist li.icon:nth-child(3) {
     --animation-delay: 2s;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from {
+        border-color: transparent
+    }
+
+    to {
+        border-color: orange;
+    }
+}
+
+.typed-out {
+    display: block;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    font-size: 1.4rem;
+    width: 0;
+    animation:
+        typing 2s steps(40, end) forwards,
+        blink 1s infinite;
 }

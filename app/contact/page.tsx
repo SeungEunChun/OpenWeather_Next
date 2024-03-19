@@ -10,8 +10,8 @@ export default function PageContact() {
             <figure className='mb-5'>
                 <img src="https://i.ibb.co/r7ydKjg/profile2.png" alt="profile" className="img-fluid myprofile" />
             </figure>
-            <figcaption>
-                <i>안녕하세요, 개발자 <b>천승은</b> 입니다.</i>
+            <figcaption className='d-inline-block'>
+                <i className='typed-out'>안녕하세요, 개발자 <b>천승은</b> 입니다.</i>
             </figcaption>
         </div>
         <div>
