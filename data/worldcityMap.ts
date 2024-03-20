@@ -80,8 +80,20 @@ export const worldcityMap: { [key: string]: string } = { //각국의 수도 이�
     "루안다": "Luanda",
     "킨샤사": "Kinshasa",
     "브라자빌": "Brazzaville",
-    "리브르빌": "Libreville"
-
+    "리브르빌": "Libreville",
+    "런던": "London",
+    "파리": "Paris",
+    "베를린": "Berlin",
+    "로마": "Rome",
+    "마드리드": "Madrid",
+    "워싱턴DC": "Washington",
+    "오타와": "Ottawa",
+    "멕시코시티": "Mexico City",
+    "브라질리아": "Brasilia",
+    "부에노스아이레스": "Buenos Aires",
+    "산티아고": "Santiago",
+    "캔버라": "Canberra",
+    "웰링턴": "Wellignton"
 };
 
 export const koreacityMap: { [key: string]: string } = { //주석처리한 도시는 이름이 겹치므로 향후 해결법 찾아볼 예정

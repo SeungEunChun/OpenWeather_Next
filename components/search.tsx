@@ -105,7 +105,7 @@ export default function Search(): JSX.Element {
                     <p>체감온도 : {(weather.main.feels_like).toFixed(1)}°C</p>
                     <p>상태 : {weather.weather[0].description}</p>
                     <p>풍속 : {(weather.wind.speed).toFixed(1)}m/s</p>
-                    <div className='closebtn' onClick={handleClick}>닫기</div>
+                    <div className='closebtn d-inline-block' onClick={handleClick}>닫기</div>
                 </div>
 
             )}

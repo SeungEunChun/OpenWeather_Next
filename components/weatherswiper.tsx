@@ -191,6 +191,7 @@ const WeatherSwiper: FC = () => {
     return (
         <Swiper className='weatherswiper'
             effect={'coverflow'}
+
             grabCursor={true}
             centeredSlides={true}
             slidesPerView={6}
@@ -240,7 +241,7 @@ const WeatherSwiper: FC = () => {
             {
                 weather.map((e, i) => {
                     return <SwiperSlide>
-                        <div key={`city${i}`} className={`w-100 text-center searchresult bg${e.weather[0].icon} py-5`}>
+                        <div key={`city${i + 1}`} className={`w-100 text-center searchresult bg${e.weather[0].icon} py-5`}>
                             <h2>{e.name} 날씨</h2>
                             <img src={`https://openweathermap.org/img/wn/${e.weather[0].icon}@2x.png`} alt='weathericon' />
                             <strong>{(e.main.temp).toFixed(1)}°C</strong>

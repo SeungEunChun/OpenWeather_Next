@@ -185,6 +185,11 @@ body.dim::after {
 
 .closebtn {
     cursor: pointer;
+    border: 1px solid #000;
+    padding: 10px;
+    width: 100px;
+    border-radius: 30px;
+
 }
 
 #Contact {
@@ -362,4 +367,23 @@ img.myprofile {
     animation:
         typing 2s steps(40, end) forwards,
         blink 1s infinite;
+}
+
+.helpbtn {
+    cursor: pointer;
+    border: 1px solid #000;
+    text-align: center;
+    width: 100px;
+}
+
+.helparea ul {
+    list-style: none;
+    word-break: keep-all;
+}
+
+.helparea p {
+    width: 56px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
 }
