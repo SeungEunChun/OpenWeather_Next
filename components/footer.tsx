@@ -28,14 +28,14 @@ export default function Footer() {
                 <li>1 . 검색하고 싶은 도시명을 한국어로 입력해주세요</li>
                 <li>2 . 한국 도시를 검색하고 싶으시다면, 우측 상단의 선택박스를 클릭하여 한국 날씨로 변경해 주세요.</li>
                 <li>
-                    <ul className="row">
+                    <ul className="row p-0 mt-3">
                         <li>
                             <strong>불특정한 오류로 검색되지 않는 도시</strong><br />
                             <span>검색되지 않는 도시를 보려면?! <p className="d-block border" onClick={helpClick}>클릭</p></span>
                         </li>
                         {help && willfix.map((e, i) => {
                             return (
-                                <li className="col-3" key={`cityname${i}`}>{e}</li>
+                                <li className="col-md-3" key={`cityname${i}`}>{e}</li>
                             )
                         })}
                     </ul>
