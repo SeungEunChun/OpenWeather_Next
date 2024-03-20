@@ -13,6 +13,7 @@ export default function Footer() {
     const helpClick = () => {
         setHelp(prev => !prev)
     }
+
     useEffect(() => {
         setHelp(false)
     }, [show])
